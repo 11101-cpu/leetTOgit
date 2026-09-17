@@ -9,11 +9,7 @@ class Solution {
                 x /= 10;
             }
         }
-        if (y == reversed) {
-            return true;
-        } else {
-            return false;
-        }
+        return y == reversed;
 
     }
 }
