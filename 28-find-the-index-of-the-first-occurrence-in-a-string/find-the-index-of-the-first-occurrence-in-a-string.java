@@ -1,23 +1,22 @@
 class Solution {
     public int strStr(String haystack, String needle) {
 
-     boolean result = haystack.contains(needle);
-     if(!result)
-         return -1;
+        if (needle.length() == 0)
+            return 0;
 
-    int index = haystack.indexOf(needle);
+        for (int i = 0; i <= haystack.length() - needle.length(); i++) {
 
+            int j = 0;
 
-return index;
-}
-}
-public class Main {
-    public static void main(String[] args) {
-       String h = "butsad";
-       String n = "sad";
-       Solution sol = new Solution();
+            while (j < needle.length() &&
+                   haystack.charAt(i + j) == needle.charAt(j)) {
+                j++;
+            }
 
-       int i = sol.strStr(h,n);
-       System.out.println(i);
+            if (j == needle.length())
+                return i;
+        }
+
+        return -1;
     }
 }
